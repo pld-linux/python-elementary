@@ -1,0 +1,33 @@
+--- python-elementary-0.7.3/elementary/elementary.c_elementary_list.pxi.orig	2010-10-01 01:03:41.000000000 +0200
++++ python-elementary-0.7.3/elementary/elementary.c_elementary_list.pxi	2012-01-22 08:26:33.712994597 +0100
+@@ -49,7 +49,7 @@
+     cdef Elm_List_Item *item
+     cdef object cbt
+ 
+-    def __new__(self):
++    def __cinit__(self):
+         self.item = NULL
+ 
+     def __del_cb(self):
+--- python-elementary-0.7.3/elementary/elementary.c_elementary_genlist.pxi.orig	2010-10-01 01:03:41.000000000 +0200
++++ python-elementary-0.7.3/elementary/elementary.c_elementary_genlist.pxi	2012-01-22 08:27:56.626330708 +0100
+@@ -126,7 +126,7 @@
+     cdef readonly object _state_get_func
+     cdef readonly object _del_func
+ 
+-    def __new__(self, *a, **ka):
++    def __cinit__(self, *a, **ka):
+         self._item_style = "default"
+         self._label_get_func = None
+         self._icon_get_func = None
+--- python-elementary-0.7.3/elementary/elementary.c_elementary_object.pxi.orig	2010-10-01 01:03:41.000000000 +0200
++++ python-elementary-0.7.3/elementary/elementary.c_elementary_object.pxi	2012-01-22 08:29:46.943001067 +0100
+@@ -304,7 +304,7 @@
+                 break
+         else:
+             raise ValueError("Callback %s was not registered with event %r" %
+-                             (func, e))
++                             (func, event))
+ 
+         lst.pop(i)
+         if lst:
