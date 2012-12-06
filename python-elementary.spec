@@ -2,7 +2,7 @@ Summary:	Python bindings for Elementary library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Elementary
 Name:		python-elementary
 Version:	1.7.0
-Release:	4
+Release:	5
 License:	LGPL v3+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/releases/BINDINGS/python/%{name}-%{version}.tar.bz2
